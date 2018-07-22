@@ -1,0 +1,23 @@
+[user]
+	name = Sourena Yadegari
+	email = srn.yad@gmail.com
+[alias]
+	ci = commit
+	status = st
+	co = checkout
+	st = status
+	br = branch
+	di = diff --no-pager -w
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+[core]
+	editor = emacs -q -nw
+[color]
+	ui = auto
+[push]
+	default = upstream
+[merge]
+	conflictstyle = diff3
+[credential]
+	helper = osxkeychain

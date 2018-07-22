@@ -1,5 +1,7 @@
 #!/bin/sh
 
+rsync -v ~/.bashrc ~/.bash_profile .
 rsync -v ~/.emacs .
-rsync -vr  ~/.emacs.d .
-rsync -v /Users/syad/.gitconfig
+rsync -r  ~/.emacs.d .
+rsync -v /Users/syad/.gitconfig .
+rsync -v ~/git-completion.bash	~/git-prompt.sh .
