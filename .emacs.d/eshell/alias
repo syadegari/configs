@@ -1,0 +1,4 @@
+alias lsd ls -lrt|grep "^d" $*
+alias lt ls -lrt $*
+alias ll ls -lt $*
+alias nil  $*
