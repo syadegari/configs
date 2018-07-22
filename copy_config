@@ -2,3 +2,4 @@
 
 rsync -v ~/.emacs .
 rsync -vr  ~/.emacs.d .
+rsync -v /Users/syad/.gitconfig
