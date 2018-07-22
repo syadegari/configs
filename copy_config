@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rsync -v ~/.emacs .
+rsync -vr  ~/.emacs.d .
