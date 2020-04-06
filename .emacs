@@ -24,7 +24,7 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 ;; ;; themes
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'adwaita t)
+(load-theme 'cobalt t)
 ;; iedit mode
 (add-to-list 'load-path "~/.emacs.d/elpa/iedit-20161030.1920/")
 (require 'iedit)
@@ -37,10 +37,7 @@
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 ;; ace-jump
-(autoload
-  'ace-jump-mode
-  "ace-jump-mode"
-  "Emacs quick move minor mode"
+(autoload  'ace-jump-mode  "ace-jump-mode"  "Emacs quick move minor mode"
   t)
 ;; (require 'ace-jump-mode)
 (global-set-key (kbd "C-c C-SPC") 'ace-jump-mode)
@@ -91,23 +88,16 @@
 ;;;; Julia
 (require 'julia-mode)
 (load "julia-repl")
-(setq julia-basic-repl-path "~/opt/julia/bin/julia")
-
-;;;; Yasnippet
-(add-to-list 'load-path
-              "/conti/yadegaris/.emacs.d/yasnippet/")
-(require 'yasnippet)
-(setq yas-snippet-dir "/conti/yadegaris/.emacs.d/yasnippet/snippets")
+(setq julia-basic-repl-path "/Applications/Julia-1.3.app/Contents/Resources/julia/bin/julia")
 
 ;;; lower the gc limit to default value
 (setq gc-cons-threshold 800000)
 
 ;;;; T.E.M.P.O.R.A.R.Y.
 (electric-pair-mode t)
-(company-mode t)
-(yas-global-mode t)
+;; (company-mode t)
 (setq mode-require-final-newline 'nil)   ;; needed to prevent insert a new line
-                                         ;; at the end of snippet
+;; at the end of snippet
 ;;;; T.E.M.P.O.R.A.R.Y.
 (add-to-list 'auto-mode-alist '("\\.fi\\'" . f90-mode))
 (defvar f90-mod-bf (make-face 'f90-mod-bf))                                                     
