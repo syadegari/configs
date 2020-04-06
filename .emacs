@@ -88,15 +88,6 @@
 
 (put 'downcase-region 'disabled nil)
 
-;;;; Haskell
-(require 'haskell-mode-autoloads)
-(add-to-list 'Info-default-directory-list "/conti/yadegaris/.emacs.d/haskell-mode-master/")
-(require 'inf-haskell)
-(require 'haskell-interactive-mode)
-(require 'haskell-process)
-(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
-(setq haskell-process-path-ghci "/Applications/ghc-7.10.1.app/Contents/bin/ghci")
-
 ;;;; Julia
 (require 'julia-mode)
 (load "julia-repl")
