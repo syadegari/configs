@@ -46,30 +46,6 @@
 (global-set-key (kbd "C-c C-SPC") 'ace-jump-mode)
 ;;                    END
 ;;                     Experimentals ;; Experimentals ;;  Experimentals 
-;; ffap bindings
-(ffap-bindings)
-;; Some general settings
-(setq-default line-spacing 5)
-(setq inhibit-startup-screen t)
-(setq column-number-mode t)
-(which-function-mode 1)
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
-(set-window-fringes nil 0 0)
-(show-paren-mode 1)
-(winner-mode 1)
-;; no tabs
-(setq-default indent-tabs-mode nil)
-
-;;;; FONT 60 for vnc and 80 for exceed
-;(set-frame-font "Monaco-12")
-(set-frame-font "Source Code Pro-12")
-;(set-frame-font "Menlo-12")
-;(set-frame-font "Courier-13")
-(setq x-select-enable-clipboard t)
-;; switch window with ctrl+tab
-(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; paredit
 (require 'paredit)
