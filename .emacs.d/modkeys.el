@@ -20,4 +20,6 @@
 			    (global-set-key (kbd "S-C-<down>") 'shrink-window)
 			    (global-set-key (kbd "S-C-<up>")   'enlarge-window)
 			    (global-set-key (kbd "C-x <left>") 'prev-buffer)
-			    (global-set-key (kbd "C-x C-b") 'ibuffer)))
+                            (nw-kbd "C-c i" 'iedit-mode)
+                            (nw-kbd "C-c o" 'iedit-toggle-unmatched-lines-visible)))
+
