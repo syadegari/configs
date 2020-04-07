@@ -1,6 +1,0 @@
-;; -*- emacs-lisp -*- <17/02/12 17:01:37 /Users/syad/.emacs.d/tramp>
-;; Tramp connection history.  Don't change this file.
-;; You can delete it, forcing Tramp to reapply the checks.
-
-((["scp" nil "hpc12.tudelft.net" nil nil]
-  nil))
