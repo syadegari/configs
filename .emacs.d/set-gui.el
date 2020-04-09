@@ -5,6 +5,8 @@
 		    (setq-default line-spacing 3)
 		    (setq inhibit-startup-screen t)
 		    (setq column-number-mode t)
+                    ;; no backups 
+                    (setq make-backup-files nil)
 		    (which-function-mode 1)
 		    (tool-bar-mode -1)
 		    (menu-bar-mode -1)
@@ -21,5 +23,6 @@
                     ;;(set-frame-font "Courier-13")
                     ;;(set-frame-font "JetBrains Mono-13")
                     (if (string-equal system-type "darwin")
-                        (set-frame-font "Source Code Pro-12"))
+                        (set-frame-font "Source Code Pro-14"))
+                        ;; (set-frame-font "Source Code Pro-12"))
 		    (setq x-select-enable-clipboard t)))

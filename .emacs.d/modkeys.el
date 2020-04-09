@@ -8,9 +8,9 @@
 			    (global-set-key (kbd "<f9>") 'kill-this-buffer)  ; kill buffer
 			    (global-set-key (kbd "<f5>") 'other-window)      ; other window!
 			    (global-set-key (kbd "<f6>") (kbd "C-- C-x o") ) ; other window backward
-			    (global-set-key (kbd "<f2>") 'helm-buffers-list) ; helm buffer list 
-			    (global-set-key (kbd "C-x C-b") 'ibuffer)        ; ibuffer  
-			    (global-set-key (kbd "<f1>") 'helm-M-x )         ; helm
+			    (global-set-key (kbd "<f2>") 'helm-buffers-list)   ; ibuffer
+;			    (global-set-key (kbd "<f2>") (kbd "C-x C-b") )   ; ibuffer
+			    (global-set-key (kbd "<f1>") 'helm-M-x )   ; ibuffer
 			    (global-set-key (kbd "<f4>") 'shell)             ; opens a shell
 			    (global-set-key (kbd "<f7>") 'hs-toggle-hiding)
 			    (global-set-key (kbd "<f10>") 'delete-window)
@@ -20,6 +20,7 @@
 			    (global-set-key (kbd "S-C-<down>") 'shrink-window)
 			    (global-set-key (kbd "S-C-<up>")   'enlarge-window)
 			    (global-set-key (kbd "C-x <left>") 'prev-buffer)
+			    (global-set-key (kbd "C-x C-b") 'ibuffer)
                             (nw-kbd "C-c i" 'iedit-mode)
                             (nw-kbd "C-c o" 'iedit-toggle-unmatched-lines-visible)))
 
