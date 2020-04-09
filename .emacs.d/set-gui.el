@@ -12,6 +12,7 @@
 		    (set-window-fringes nil 0 0)
 		    (show-paren-mode 1)
 		    (winner-mode 1)
+                    (electric-pair-mode t)
 		    ;; no tabs
 		    (setq-default indent-tabs-mode nil)
 		    ;; FONT
