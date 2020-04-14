@@ -6,7 +6,6 @@
 (autoload 'modify-keybinds (concat emacs-directory "modkeys.el"))
 (modify-keybinds)
 
-(add-to-list 'load-path "~/.emacs.d")
 ;; (load-theme 'cobalt t)
 ;; (load-theme 'dark-font-lock t)
 ;; (load-theme 'espresso t)
