@@ -6,11 +6,8 @@
 (autoload 'modify-keybinds (concat emacs-directory "modkeys.el"))
 (modify-keybinds)
 
-;; (load-theme 'cobalt t)
-;; (load-theme 'dark-font-lock t)
-;; (load-theme 'espresso t)
-;; (load-theme 'colorsarenice-dark t)
-(load-theme 'cobalt t)
+(setq custom-theme-directory "~/.emacs.d/themes")
+(load-theme 'almost-mono-cream t)
 
 (setq initial-frame-alist '((width . 120) (height . 57)))
 
@@ -63,20 +60,15 @@
 (use-package evil-surround
   :config (global-evil-surround-mode 1))
 
-;; (use-package smart-mode-line)
-;; (use-package smart-mode-line-powerline-theme
-;;   :after powerline
-;;   :after smart-mode-line
-;;   :config
-;;   (sml/setup)
-;;   (sml/apply-theme 'powerline))
-
-;; (use-package powerline
-;;   :config
-;;   (powerline-default-theme))
-
 (use-package smart-mode-line
   :ensure t
   :config
-  (setq sml/theme 'dark)
+  (setq sml/theme 'respectful)
   (sml/setup))
+
+;; try smart-parens mode
+;; (use-package smartparens)
+(use-package yasnippet
+  :config (yas-global-mode 1))
+
+(put 'narrow-to-region 'disabled nil)
