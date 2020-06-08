@@ -1,0 +1,9 @@
+#!/bin/bash
+
+shortened="s/^(.+theme)(.*$)/$1/; print"
+
+for i in $(ls *el); do
+    short_name=$(echo $i | perl -ne '/^(.+theme)(.*$)/; print $1')
+    mv $i  $short_name.el
+done
+         
