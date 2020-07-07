@@ -1,9 +1,23 @@
 # Aliases for shell
+list_directories () {
+    ls -lt $1| grep "^d"
+}
+
+list_files () {
+    ls -lt $1| grep "^[^d]"
+}
+
 alias ls='CLICOLOR_FORCE=1 ls -G'
 alias lt='ls -lrt'
 alias ll='ls -l'
-alias less='less -R'
-alias lsd='ls -lt| grep "^d"'
+alias lsd='list_directories'
+alias lsf='list_files'
+alias emacsq='emacs -nw -q'
+alias grep='grep --color=always'
+alias top='top -o cpu'
+# for colored less output
+export LESS='-R'
+export LESSOPEN='|~/.lessfilter %s'
 
 export HISTFILESIZE=10000000
 
@@ -14,22 +28,6 @@ case "$TERM" in
 	PS1="\u@\h:\W$ "
 esac
 export PS1="\[\033[1;30m\]\u:\W$\[\033[0m\] "
-
-
-# Add GHC 7.10.1 to the PATH, via https://ghcformacosx.github.io/
-export GHC_DOT_APP="/Applications/ghc-7.10.1.app"
-if [ -d "$GHC_DOT_APP" ]; then
-  export PATH="${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin:${PATH}"
-fi
-
-
-# Setting PATH for Python 3.5
-# The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
-PATH=/Users/syad/bin:$PATH
-PATH=/usr/local/Cellar/gcc/6.2.0/bin/:$PATH
-PATH=/Users/syad/anaconda:$PATH
-export PATH
 
 # git
 source ~/git-completion.bash
@@ -48,11 +46,29 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 # '\W' adds the name of the current directory
 export PS1="$purple\u$green\$(__git_ps1)$blue \W $ $reset"
 
+export PATH="/usr/local/opt/llvm/bin:$PATH"
 
-# Setting PATH for Python 3.6
+export PATH="/Users/syad/bin:$PATH"
+
+# Setting PATH for Python 3.8
 # The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
 export PATH
 
-# added by Anaconda2 4.3.1 installer
-export PATH="/Users/syad/anaconda/bin:$PATH"
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/syad/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/syad/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/syad/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/syad/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
