@@ -18,11 +18,7 @@
 		    ;; no tabs
 		    (setq-default indent-tabs-mode nil)
 		    ;; FONT
-                    ;;(set-frame-font "Monaco-11")
-                    ;;(set-frame-font "Menlo-12")
-                    ;;(set-frame-font "Courier-13")
-                    ;;(set-frame-font "JetBrains Mono-13")
                     (if (string-equal system-type "darwin")
-                        (set-frame-font "Source Code Pro-14"))
-                        ;; (set-frame-font "Source Code Pro-12"))
-		    (setq x-select-enable-clipboard t)))
+                        (set-frame-font "Monaco-12"))
+		    (setq x-select-enable-clipboard t)
+                    (fset 'yes-or-no-p 'y-or-n-p)))

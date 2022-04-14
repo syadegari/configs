@@ -1,5 +1,7 @@
 (setq gc-cons-threshold 80000000
       emacs-directory "~/.emacs.d/")
+(setq split-height-threshold 200)
+(setq split-width-threshold 300)
 
 (autoload 'set-gui (concat emacs-directory "set-gui.el"))
 (set-gui)
@@ -7,11 +9,11 @@
 (modify-keybinds)
 
 (setq custom-theme-directory "~/.emacs.d/themes")
-(load-theme 'almost-mono-cream t)
+(add-to-list 'load-path "~/.emacs.d/themes")
+(load-theme 'spacemacs-dark t)
 
 (setq initial-frame-alist '((width . 120) (height . 57)))
 
-(find-file "~/AI/readings.org")
 (find-file "~/.emacs")
 (pop-to-buffer-same-window ".emacs")
 
@@ -35,15 +37,21 @@
 
 (use-package iedit)
 
+(use-package wgrep)
+
+(use-package wdired)
+
 (use-package async)
 
 (use-package expand-region
   :bind
   ("C-=" . 'er/expand-region))
 
-
 (use-package paredit)
-(use-package magit)
+
+(use-package magit
+  :config
+  (setq magit-diff-refine-hunk t))
 
 (use-package evil
   :config
@@ -60,15 +68,15 @@
 (use-package evil-surround
   :config (global-evil-surround-mode 1))
 
-(use-package smart-mode-line
-  :ensure t
-  :config
-  (setq sml/theme 'respectful)
-  (sml/setup))
-
 ;; try smart-parens mode
-;; (use-package smartparens)
+(use-package smartparens)
 (use-package yasnippet
   :config (yas-global-mode 1))
 
+(use-package julia-mode)
+
 (put 'narrow-to-region 'disabled nil)
+
+(put 'upcase-region 'disabled nil)
+
+
