@@ -51,7 +51,8 @@
 
 (use-package magit
   :config
-  (setq magit-diff-refine-hunk t))
+  (setq magit-diff-refine-hunk t)
+  (set-face-attribute 'magit-branch-current nil :inverse-video t))
 
 (use-package evil
   :config
