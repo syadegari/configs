@@ -15,6 +15,7 @@
 		    (show-paren-mode 1)
 		    (winner-mode 1)
                     (electric-pair-mode t)
+                    (global-hl-line-mode t)
 		    ;; no tabs
 		    (setq-default indent-tabs-mode nil)
 		    ;; FONT
