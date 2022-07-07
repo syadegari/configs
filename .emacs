@@ -81,3 +81,18 @@
 (put 'upcase-region 'disabled nil)
 
 
+(setq python-shell-interpreter "/Users/yadegari/Documents/code/eee_env/bin/python3")
+
+;;;;
+
+(use-package flycheck)
+(use-package flycheck-mypy)
+
+(add-hook 'python-mode-hook 'flycheck-mode) 
+(add-hook 'python-mode-hook
+          (lambda ()
+            (setq flycheck-python-pylint-executable "~/Documents/code/_venv_/bin/python")
+            (setq flycheck-pylintrc "~/.pylintrc")))
+(flycheck-add-next-checker 'python-flake8 'python-pylint)
+
+
